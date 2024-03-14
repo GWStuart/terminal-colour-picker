@@ -39,22 +39,22 @@ with curtsies.Input(keynames="curtsies") as input_generator:
     for e in curtsies.Input():
         if e in ("<ESC>", "<Ctrl-d>", "q"):
             break
-        if e == "<UP>":
+        if e == "<UP>" or e == "k":
            colour[selected] += 1
            if colour[selected] > 255:
                colour[selected] = 255 
            print_content()
-        elif e == "<DOWN>":
+        elif e == "<DOWN>" or e == "j":
             colour[selected] -= 1
             if colour[selected] < 0:
                 colour[selected] = 0
             print_content()
-        elif e == "<LEFT>":
+        elif e == "<LEFT>" or e == "h":
             selected -= 1
             if selected < 0:
                 selected = 0
             print_content()
-        elif e == "<RIGHT>":
+        elif e == "<RIGHT>" or e == "l":
             selected += 1
             if selected > 2:
                 selected = 2
